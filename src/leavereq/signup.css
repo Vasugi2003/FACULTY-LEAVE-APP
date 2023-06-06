@@ -1,0 +1,43 @@
+main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #05050a;
+	color: #fff;
+}
+
+section {
+	margin-bottom: 20px;
+}
+
+h2 {
+	margin-top: 0;
+}
+
+form label {
+	display: block;
+	margin-bottom: 5px;
+	color: #fff;
+}
+
+form input,
+form select,
+form textarea {
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+}
+
+form textarea {
+	height: 100px;
+}
+
+form input[type="submit"] {
+	background-color: #333;
+	color:#fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
