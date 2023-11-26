@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Faculty Leave Management System</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="s.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-BiDnAfoJwdv/m+H2n8jZnL1YBzlwvBpIjKzXAsmT7TjTtTzokpJh+y8KLuV7mWXjZiOa7Qm9L4O4j2TWgBvWIw==" crossorigin="anonymous" />
+	<!-- Font Awesome Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-bV7kKD1Lweu4KT4rk1iH2C7vAkPcR4dSj38/YdcYdu+WqzLJK9GgOe6yEmU6y3U6wGg6/rDkOZzyzUlZ5KvTUQ==" crossorigin="anonymous" />
+	<!-- <style>
+		/* Custom styles for the homepage */
+		.jumbotron {
+			background-color: #FFDAB9;
+			margin-top: 50px;
+			padding: 30px;
+		}
+		.card {
+			margin-top: 50px;
+			margin-bottom: 50px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+			width: 300px;
+			height: 300px;
+		}
+		.card-img-top {
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+		}
+	</style> -->
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#"><i class="fas fa-user-graduate"></i> Faculty Leave Management System</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		    	<span class="navbar-toggler-icon"></span>
+		  	</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"><i class="far fa-calendar-alt"></i> Leave Requests</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"><i class="fas fa-chart-bar"></i> Reports</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"><i class="fas fa-cog"></i> Settings</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="jumbotron">
+		<h1 class="display-4">Welcome to the Faculty Leave Management System!</h1>
+		</div>
+
+
+
+
+
+
+
+
+			<!-- <div class="card">
+				<img src="faculty_member.jpg" alt="Faculty Member">
+				<h3>John Smith</h3>
+				<p>Department: Computer Science</p>
+				<a href="#" class="button">View Attendance</a>
+			  </div>
+			  
+			  <style>
+				.card {
+				  background-color: #fff;
+				  border-radius: 4px;
+				  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+				  padding: 16px;
+				  text-align: center;
+				  border: 2px solid black;
+				  
+				  display: flex;
+				  justify-content: center;
+				  align-items: center;
+				  height: 200px;
+				}
+			  
+				.card img {
+				  width: 50%;
+				  border-radius: 50%;
+				  margin-bottom: 10px;
+				}
+			  
+				.card h3 {
+				  font-size: 24px;
+				  margin-bottom: 10px;
+				}
+			  
+				.card p {
+				  font-size: 18px;
+				  color: #555;
+				  margin-bottom: 10px;
+				}
+			  
+				.button {
+				  background-color: #4CAF50;
+				  border: none;
+				  color: white;
+				  padding: 12px 24px;
+				  text-align: center;
+				  text-decoration: none;
+				  display: inline-block;
+				  font-size: 16px;
+				  border-radius: 4px;
+				}
+			  
+				.button:hover {
+				  background-color: #3e8e41;
+				}
+			  </style>
+			   -->
+
+
+<!-- 
+			   <div class="card-container">
+				<div class="card">
+				  <img src="faculty_member.jpg" alt="Faculty Member">
+				  <h3>John Smith</h3>
+				  <p>Department: Computer Science</p>
+				  <a href="#" class="button">View Attendance</a>
+				</div>
+			  </div>
+			  
+			  <style>
+				.card-container {
+				  display: flex;
+				  justify-content: center;
+				  align-items: center;
+				  height: 100vh;
+				}
+			  
+				.card {
+				  background-color: #fff;
+				  border-radius: 4px;
+				  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+				  padding: 16px;
+				  text-align: center;
+				}
+			  
+				.card img {
+				  width: 50%;
+				  border-radius: 50%;
+				  margin-bottom: 10px;
+				}
+			  
+				.card h3 {
+				  font-size: 24px;
+				  margin-bottom: 10px;
+				}
+			  
+				.card p {
+				  font-size: 18px;
+				  color: #555;
+				  margin-bottom: 10px;
+				}
+			  
+				.button {
+				  background-color: #4CAF50;
+				  border: none;
+				  color: white;
+				  padding: 12px 24px;
+				  text-align: center;
+				  text-decoration: none;
+				  display: inline-block;
+				  font-size: 16px;
+				  border-radius: 4px;
+				}
+			  
+				.button:hover {
+				  background-color: #3e8e41;
+				}
+			  </style>
+			   -->
+
+
+
+
+			   <!DOCTYPE html>
+			   <html lang="en">
+			   <head>
+				 <meta charset="UTF-8">
+				 <title>Home Page</title>
+				 <link rel="stylesheet" href="styles.css">
+			   </head>
+			   <body>
+				 <header>
+				   <h1>My Website</h1>
+				   <nav>
+					 <ul>
+					   <li><a href="#">Home</a></li>
+					   <li><a href="#">About</a></li>
+					   <li><a href="#">Contact</a></li>
+					 </ul>
+				   </nav>
+				 </header>
+			   
+				 <main>
+				   <section>
+					 <div class="card">
+					   <img src="image1.jpg" alt="Card Image">
+					   <h2>Card Title</h2>
+					   <p>Card description goes here.</p>
+					   <a href="#">Read More</a>
+					 </div>
+			   
+					 <div class="card">
+					   <img src="image2.jpg" alt="Card Image">
+					   <h2>Card Title</h2>
+					   <p>Card description goes here.</p>
+					   <a href="#">Read More</a>
+					 </div>
+			   
+					 <div class="card">
+					   <img src="image3.jpg" alt="Card Image">
+					   <h2>Card Title</h2>
+					   <p>Card description goes here.</p>
+					   <a href="#">Read More</a>
+					 </div>
+				   </section>
+				 </main>
+			   
+				 <footer>
+				   <p>&copy; 2023 My Website. All Rights Reserved.</p>
+				 </footer>
+			   </body>
+			   </html>
+			   

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete</title>
+</head>
+<body>
+    <form>
+    name :
+    <input type="text" name="name" id="name">
+    <br>
+    <input type="button" value="delete" id="delete">
+    <p id="res"> </p>
+    </form>
+    <script>
+        const deleteone = document.getElementById('delete');
+        const name = document.getElementById('name');
+        const result = document.getElementById('res');
+
+        deleteone.addEventListener('click',()=>{
+            if(name.value == ""){
+                result.innerText = "please enter name!!";
+            }
+            else{
+                fetch(`http://localhost:8082/api/leaverequests/${name.value}`,{
+                    method: "DELETE"
+                })  
+                    .then((res) => {return res.text() })
+                    .then((res) => { result.innerText = res });
+            }
+
+        })
+    </script>
+
+</body>
+</html>

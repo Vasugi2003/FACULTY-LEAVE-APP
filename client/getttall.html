@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Getall</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1 class="text-center">Faculties Applied for leave</h1>
+    <div class="container">
+        <table class="table ">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">S.no</th>
+                    <th scope="col">Faculty ID</th>
+                    <th scope="col">Faculty name</th>
+                    <th scope="col">Mail</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Mobile Number</th>
+                    <th scope="col">Start date</th>
+                    <th scope="col">End date</th>
+                    <th scope="col">Leave Type</th>
+                    
+                    <th scope="col">Reason</th>
+
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+        <input type="button" value="getall" id="getall">
+        </table>
+    </div>
+
+    <script>
+        const getall = document.getElementById('getall');
+        const result = document.getElementById('res');
+        getall.addEventListener('click', () => {
+            fetch('http://localhost:8080/api/leaverequests')
+                .then(res => { return res.json() })
+                .then((objectdata) => {
+                    console.log(objectdata[0].name);
+                    let tabledata = "";
+                    objectdata.map((values, i) => {
+                        console.log(values.name)
+                        tabledata += `<tr>
+                            <td>${i + 1}</td>
+                            <td>${values.fid}</td>
+                            <td>${values.name}</td>
+                            <td>${values.mail}</td>
+                            <td>${values.dept}</td>
+                            <td>${values.mno}</td>
+                            <td>${values.startDate}</td>
+                            <td>${values.endDate}</td>
+                            <td>${values.leave}</td>
+                            
+                           <td>${values.reason}</td>
+                            </tr>`
+                    });
+                    const table = document.getElementById('tbody');
+                    table.innerHTML = tabledata;
+                })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <label for="fid">Faculty ID:</label>
+        <input type="text" id="fid" > <br> <br>
+
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        
+        <label for="Mailid">Mail-ID:</label>
+        <input type="email" id="mail" name="mail">
+        <br>
+
+        <label for="dept">Department:</label>
+        <select id="dept" name="dept">
+            <option></option>
+            <option value="ai">Artificial Intelligence</option>
+            <option value="auto">Automobile Engineering</option>
+            <option value="it">Information Technology</option>
+            <option value="cse">Computer Science and Engineering</option>
+            <option value="ece">Electronics and Communication Engineering</option>
+            <option value="eee">Electrical and Electronic Engineering</option>
+            <option value="ei">Electronics and Instrumentation Engineering</option>
+            <option value="csd">Computer System and Design</option>
+            <option value="ft">Food Technology</option>
+            <option value="ch">Chemical Engineering</option>
+            <option value="mech">Mechanical Engineering</option>
+            <option value="mts">Mechatronics Engineering</option>
+            <option value="civil">Civil Engineering</option>
+        </select><br><br>
+        
+        <label for="mno">Mobile No:</label>
+        <input type="text" name="mno" id="mno"> <br>
+    
+        <!-- <label for="gender">Gender</label>
+        <input type="radio" name="gender" id="mgender" value="male">MALE <br>
+        <input type="radio" name="gender" id="fgender" value="female">FEMALE <br> -->
+
+        
+        <label for="startdate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate"><br><br>
+        
+        <label for="enddate">End Date:</label>
+        <input type="date" id="endDate" name="endDate"><br><br>
+        <label for="leave-type">Leave Type:</label>
+        <select id="leave" name="leave">
+            <option></option>
+            <option value="sick-leave">Sick Leave</option>
+            <option value="vacation-leave">Vacation Leave</option>
+            <option value="personal-leave">Personal Leave</option>
+        </select><br><br>
+        
+
+        
+        <label for="reason">Reason:</label><br>
+        <textarea id="reason" name="reason" rows="5" cols="50"></textarea><br><br>
+        
+        <input type="button" name="insert" value="insert" id="insert"> <br>
+    </form>
+    <p id="res"></p>
+    
+</body>
+
+<script>
+        const fid = document.getElementById('fid');
+        const name = document.getElementById('name');
+        const mail = document.getElementById('mail');     
+        const dept = document.getElementById('dept');
+        const mno = document.getElementById('mno');
+
+        const startDate = document.getElementById('startDate');
+        const endDate = document.getElementById('endDate');
+       
+        const leaveType = document.getElementById('leave');       
+        const reason = document.getElementById('reason');
+        const insert = document.getElementById('insert');
+        const result = document.getElementById('res')
+
+        insert.addEventListener('click',()=>{
+            var data = {
+                fid: fid.value,
+                name: name.value,
+                mail: mail.value,
+                
+                dept: dept.value,
+                mno: mno.value,
+                startDate: startDate.value,
+                endDate: endDate.value,
+                leave: leave.value,
+                reason: reason.value
+            }
+            fetch('http://localhost:8080/api/leaverequests',{
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json; chatset=UTF-8'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(res => {return res.json()})
+            .then(res => {result.innerText = JSON.stringify(res)});
+    
+        })
+    </script>
+</html>

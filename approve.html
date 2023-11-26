@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attendance Monitoring System - Admin Page</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+		}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 5px rgba(0,0,0,0.2);
+		}
+		h1 {
+			margin-top: 0;
+			text-align: center;
+			color: #333;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 20px;
+		}
+		table th, table td {
+			padding: 10px;
+			border: 1px solid #ddd;
+			text-align: center;
+		}
+		table th {
+			background-color: #f2f2f2;
+		}
+		.btn {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #4CAF50;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 3px;
+			margin: 10px;
+			cursor: pointer;
+		}
+		.btn:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Attendance Monitoring System - Admin Page</h1>
+		<table>
+			<thead>
+				<tr>
+                    <th scope="col">S.no</th>
+                    <th scope="col">Faculty ID</th>
+                    <th scope="col">Faculty name</th>
+                    <th scope="col">Mail</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Mobile Number</th>
+                    <th scope="col">Start date</th>
+                    <th scope="col">End date</th>
+					<th>Status</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody id="attendance-table">
+				<!-- Table data will be added dynamically using JavaScript -->
+			</tbody>
+		</table>
+		<button class="btn" onclick="getAttendance()">Refresh Attendance</button>
+		<button class="btn" onclick="logout()">Logout</button>
+        <td><button class="btn" onclick="approveAttendance('${attendance._fid}')">Approve </button></td>
+	</div>
+	<script>
+		// Function to get attendance data from the server
+		function getAttendance() {
+			fetch('/attendance')
+				.then(response => response.json())
+				.then(data => {
+					// Clear the table first
+					document.getElementById('attendance-table').innerHTML = '';
+					// Loop through the data and add rows to the table
+					data.forEach(attendance => {
+						let row = document.createElement('tr');
+						row.innerHTML = `
+							<td>${i + 1}</td>
+                            <td>${attendance.fid}</td>
+                            <td>${attendance.name}</td>
+                            <td>${attendance.mail}</td>
+                            <td>${attendance.dept}</td>
+                            <td>${attendance.mno}</td>
+                            <td>${attendance.startDate}</td>
+                            <td>${values.endDate}</td>
+							<td>${attendance.status}</td>
+							<td><button class="btn" onclick="approveAttendance('${attendance._fid}')">Approve </button></td>
+						`;
+						document.getElementById('attendance-table').appendChild(row);
+					});
+				})
+				.catch(error => console.log(error));
+		}

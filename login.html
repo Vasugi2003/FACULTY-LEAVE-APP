@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KEC LOGIN PAGE</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+
+      align-items: center;
+      padding-top: 15rem;
+      padding-bottom: 40px;
+      background-color: #c0b5eeaf;
+    }
+
+    .form-signin {
+      width: 100%;
+      max-width: 330px;
+      padding: 15px;
+      margin: auto;
+      border: 2px solid black;
+    }
+
+    .form-signin .checkbox {
+      font-weight: 400;
+    }
+
+    .form-signin .form-floating:focus-within {
+      z-index: 2;
+    }
+
+    .form-signin input[type="email"] {
+      margin-bottom: -1px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .form-signin input[type="password"] {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+
+</head>
+
+<body class="text-center">
+  
+  <h1 style="text-align: center;">WELCOME</h1>
+
+
+  <main class="form-signin" ng-app="myApp" ng-controller="myCtrl">
+    <form name="form" ng-submit="login(user)" role="form">
+
+
+      <h1 class="h3 mb-3 fw-normal" style="color: white;">Log in</h1>
+
+      <div class="form-floating">
+        <input type="sid" class="form-control" id="floatingInput" name="sid" placeholder="StaffID" ng-model="user.sid"
+          required="">
+        <label for="floatingInput">Staff ID</label>
+      </div>
+      <br>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" name="passwords" placeholder="Password"
+          ng-model="user.passwords" required="">
+        <label for="floatingPassword">Password</label>
+      </div>
+
+
+      <input type="submit" value="login">
+      <!-- <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary"><a href="index.html" >SIGN IN</a>  </button> -->
+      <!-- ng-disabled="form.$invalid" class="btn btn-primary" -->
+    </form>
+  </main>
+
+</body>
+
+</html>

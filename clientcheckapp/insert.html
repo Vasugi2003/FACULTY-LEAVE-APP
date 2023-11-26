@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <label for="fid">Faculty ID:</label>
+        <input type="text" id="fid" > <br> <br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+       
+        <label for="Mailid">Mail-ID:</label>
+        <input type="email" id="mail" name="mail">
+        <br>
+
+        <label for="dept">Department:</label>
+        <select id="dept" name="dept">
+            <option></option>
+            <option value="ai">Artificial Intelligence</option>
+            <option value="auto">Automobile Engineering</option>
+            <option value="it">Information Technology</option>
+            <option value="cse">Computer Science and Engineering</option>
+            <option value="ece">Electronics and Communication Engineering</option>
+            <option value="eee">Electrical and Electronic Engineering</option>
+            <option value="ei">Electronics and Instrumentation Engineering</option>
+            <option value="csd">Computer System and Design</option>
+            <option value="ft">Food Technology</option>
+            <option value="ch">Chemical Engineering</option>
+            <option value="mech">Mechanical Engineering</option>
+            <option value="mts">Mechatronics Engineering</option>
+            <option value="civil">Civil Engineering</option>
+        </select><br><br>
+        
+        
+        <input type="button" name="insert" value="insert" id="insert"> <br>
+    </form>
+    <p id="res"></p>
+    
+</body>
+
+<script>
+        const fid = document.getElementById('fid');
+        const name = document.getElementById('name');
+        const mail = document.getElementById('mail');     
+        const dept = document.getElementById('dept');       
+        const insert = document.getElementById('insert');
+    
+        insert.addEventListener('click',()=>{
+            var data = {
+                fid: fid.value,
+                name: name.value,
+                mail: mail.value,               
+                dept: dept.value,                
+            }
+            fetch('http://localhost:8081/api/leaverequests',{
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json; chatset=UTF-8'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(res => {return res.json()})
+            .then(res => {result.innerText = JSON.stringify(res)});
+    
+        })
+    </script>
+</html>

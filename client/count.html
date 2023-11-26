@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count</title>
+</head>
+<body>
+    
+    Enter Faculty ID:
+    <input type="text" name="fid" id="fid">
+    <br>
+    <input type="button" value="getone" id="getone">
+    <p id="res"> </p>
+    <script>
+        const getone = document.getElementById('getone');
+        const fid = document.getElementById('fid');
+        const result = document.getElementById('res');
+
+
+
+        console.log("get",getone)
+        getone.addEventListener('click',()=>{
+            if(fid.value == ""){
+                result.innerText = "please enter facultyid!!";
+            }
+            else{
+                fetch(`http://localhost:8080/api/leaverequests/${fid.value}`)  
+                    .then(res => {return res.json() })
+                    .then(res => { result.innerText = JSON.stringify(res) });
+            }
+
+        })
+    </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+.containertop
+{
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: rgba(4, 11, 14, 0.905);
+  padding: 10px 10px 10px 10px;
+  border: 1px solid white;
+}
+.item{
+  width: 100px;
+  grid-column-start: 1;
+}
+img
+{
+  align-items: flex-start;
+  height: 80px;
+  width: 80px;
+}
+.navvv ul {
+	list-style: none;
+	margin: 0;
+	padding: 10px 10px 10px 10px;
+	display: flex;
+}
+
+.navvv li {
+	margin-right: 20px;
+}
+
+.navvv a {
+	color: #1c1515;
+	text-decoration: none;
+}
+.item1
+{
+
+  color: rgb(242, 239, 239);
+  font-size: 40px;
+  
+  text-align: center;
+
+}
+
+.item2
+{
+  grid-column-start: 1;
+  text-align: right;
+  color: rgb(253, 247, 247);
+  padding: 5px 5px 5px 5px;
+  /* background-color: rgb(243, 60, 60); */
+  width: 100px;
+
+}
+.item3
+{
+  grid-column-start: 1;
+  color: white;
+  padding: 10px 10px 10px 10px;
+}
+li
+{
+  color: brown;
+}
+a
+{
+  color: white;
+  text-decoration: solid;
+  font-style: italic;
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+header {
+	background-color: #050594e3;
+	color: #fff;
+	padding: 20px;
+}
+
+
+main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #05050a;
+	color: #fff;
+}
+
+section {
+	margin-bottom: 20px;
+}
+
+h2 {
+	margin-top: 0;
+}
+
+form label {
+	display: block;
+	margin-bottom: 5px;
+	color: #fff;
+}
+
+form input,
+form select,
+form textarea {
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+}
+
+form textarea {
+	height: 100px;
+}
+
+form input[type="submit"] {
+	background-color: #333;
+	color:#fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media (min-width: 1280px) {
+  .navbar {
+    padding: 0;
+  }
+
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navbar li {
+    position: relative;
+  }
+
+  .navbar a,
+  .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navbar a i,
+  .navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+  }
+
+  .navbar a:hover,
+  .navbar .active,
+  .navbar .active:focus,
+  .navbar li:hover>a {
+    color: #fff;
+  }
+
+
+  .navbar .dropdown ul {
+    display: block;
+    position: absolute;
+    left: 14px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #5c09f7e6;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
+    border-radius: 4px;
+  }
+
+  .navbar .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navbar .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+    font-weight: 400;
+    color: var(--color-secondary);
+  }
+
+  .navbar .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navbar .dropdown ul a:hover,
+  .navbar .dropdown ul .active:hover,
+  .navbar .dropdown ul li:hover>a {
+    color: var(--color-primary);
+  }
+
+  .navbar .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  .navbar .dropdown .dropdown ul {
+    top: 0;
+    left: calc(100% - 30px);
+    visibility: hidden;
+  }
+
+  .navbar .dropdown .dropdown:hover>ul {
+    opacity: 1;
+    top: 0;
+    left: 100%;
+    visibility: visible;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+  .navbar .dropdown .dropdown:hover>ul {
+    left: -100%;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .mobile-nav-show,
+  .mobile-nav-hide {
+    display: none;
+  }
+}
+ */
+
+
+/* about desing */
+.containerabout
+{
+  display: grid;
+  background-color: rgba(2, 2, 119, 0.9);
+  padding: 20px 20px 20px 20px;
+  
+
+}
+.a1
+{
+  font-size: 20px;
+  color: white;
+}
+.a2
+{
+  text-align: justify;
+  color: white;
+}
+
+
+
+.card {
+  background-color: #cdbcc5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  width: 500px;
+  height: 300px;
+  color: #05050a;
+}
+
+.card img {
+  width: 50px;
+  height: auto;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  margin: 10px;
+}
+
+.card a {
+  display: block;
+  background-color: #333;
+  color: #d6cfcf;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  width: 100px;
+  height: 40px;
+  align-items: center;
+}

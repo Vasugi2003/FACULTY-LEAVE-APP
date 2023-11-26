@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<!-- <script>
+        function validate() {
+			// Get form inputs
+			var fid = document.getElementById("fid").value;
+			var name = document.getElementById("name").value;
+			var mail = document.getElementById("mail").value;
+			var pw = document.getElementById("pw").value;
+			var cpw = document.getElementById("cpw").value;
+			var dept = document.getElementById("dept").value;
+			var mno = document.getElementById("mno").value;
+			var gender = document.getElementsByName("gender");
+			var leaveType = document.getElementById("leave").value;
+			var startDate = document.getElementById("start-date").value;
+			var endDate = document.getElementById("end-date").value;
+			var reason = document.getElementById("reason").value;
+		  
+			// Check if faculty ID is not empty
+			if (fid == "") {
+			  alert("Please enter Faculty ID");
+			  return false;
+			}
+		  
+			// Check if name is not empty
+			if (name == "") {
+			  alert("Please enter Name");
+			  return false;
+			}
+		  
+			// Check if mail is not empty and in valid format
+			if (mail == "") {
+			  alert("Please enter Mail-ID");
+			  return false;
+			} else {
+			  var mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			  if (!mail.match(mailFormat)) {
+				alert("Please enter valid Mail-ID");
+				return false;
+			  }
+			}
+		  
+			if(pw== "")
+			{
+				alert("please enter password");
+				return false;
+			}
+			if(cpw == "")
+			{
+				alert("please enter confirm password");
+				return false;
+			}
+			if (pw != cpw) {
+			  alert("Passwords do not match");
+			  return false;
+			}
+
+			
+			if(dept.selectedIndex==0)
+            {
+                alert("select your department");
+                document.myform.dept.focus();
+                return false;
+            }
+			
+			if (mno == "") {
+			  alert("Please enter Mobile Number");
+			  return false;
+			} else {
+			  var mobileFormat = /^\d{10}$/;
+			  if (!mno.match(mobileFormat)) {
+				alert("Please enter valid Mobile Number");
+				return false;
+			  }
+			}
+		  
+			// Check if gender is selected
+			var isChecked = false;
+			for (var i = 0; i < gender.length; i++) {
+			  if (gender[i].checked) {
+				isChecked = true;
+				break;
+			  }
+			}
+			if (!isChecked) {
+			  alert("Please select Gender");
+			  return false;
+			}
+		  
+			
+            if(leave.selectedIndex==0)
+            {
+                alert("select your leave type");
+                document.myform.leave.focus();
+                return false;
+            }
+		  
+			// Check if start date and end date are selected
+			if (startDate == "" || endDate == "") {
+			  alert("Please select Start Date and End Date");
+			  return false;
+			}
+		  
+			// Check if end date is not before start date
+			if (endDate < startDate) {
+			  alert("End Date should be after Start Date");
+			  return false;
+			}
+		  
+			// Check if reason is not empty
+			if (reason == "") {
+			  alert("Please enter Reason");
+			  return false;
+			}
+		  
+			
+			return true;
+		  }
+		  
+    </script> -->
+
+
+	<title>Faculty Leave Management</title>
+</head>
+<body>
+	<header>
+		<h1>Faculty Leave Management</h1>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	</header>
+	
+	<nav>
+		<nav class="navbar navbar-light bg-light">
+			<div class="container-fluid">
+			  <a class="navbar-brand" href="home.html">
+				<img src="external-address-moving-and-storage-flaticons-lineal-color-flat-icons.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+				ABOUT
+			  </a>
+			  <a class="navbar-brand" href="index.html">
+				<img src="download.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+				APPLY FOR LEAVE
+			  </a>
+			  <a class="navbar-brand" href="index1.html">
+				<img src="hhh.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+				CHECK LEAVE STATUS
+			  </a>
+			</div>
+		  </nav>
+	</nav>
+
+
+	<main>
+		
+		<h3>Apply for Leave</h3>
+		<p>To apply for leave, please fill out the following form:</p>
+		
+		<!-- <form action="action.html" name="myform"  onsubmit="return validate()">
+			<body> -->
+    
+				<form action="action.html">
+					<label for="fid">Faculty ID:</label>
+					<input type="text" id="fid" > <br> <br>
+			
+			
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" ><br><br>
+			
+					
+					<label for="Mailid">Mail-ID:</label>
+					<input type="email" id="mail" name="mail" >
+					<br>
+			
+					<label for="dept">Department:</label>
+					<select id="dept" name="dept" >
+						<option></option>
+						<option value="ai">Artificial Intelligence</option>
+						<option value="auto">Automobile Engineering</option>
+						<option value="it">Information Technology</option>
+						<option value="cse">Computer Science and Engineering</option>
+						<option value="ece">Electronics and Communication Engineering</option>
+						<option value="eee">Electrical and Electronic Engineering</option>
+						<option value="ei">Electronics and Instrumentation Engineering</option>
+						<option value="csd">Computer System and Design</option>
+						<option value="ft">Food Technology</option>
+						<option value="ch">Chemical Engineering</option>
+						<option value="mech">Mechanical Engineering</option>
+						<option value="mts">Mechatronics Engineering</option>
+						<option value="civil">Civil Engineering</option>
+					</select><br><br>
+					
+					<label for="mno">Mobile No:</label>
+					<input type="text" name="mno" id="mno" > <br>
+				
+					<!-- <label for="gender">Gender</label>
+					<input type="radio" name="gender" id="mgender" value="male">MALE <br>
+					<input type="radio" name="gender" id="fgender" value="female">FEMALE <br> -->
+			
+					
+					<label for="startdate">Start Date:</label>
+					<input type="date" id="startDate" name="startDate" ><br><br>
+					
+					<label for="enddate">End Date:</label>
+					<input type="date" id="endDate" name="endDate"><br><br>
+					<label for="leave-type">Leave Type:</label>
+					<select id="leave" name="leave" >
+						<option></option>
+						<option value="sick-leave">Sick Leave</option>
+						<option value="vacation-leave">Vacation Leave</option>
+						<option value="personal-leave">Personal Leave</option>
+					</select><br><br>
+					
+			
+					
+					<label for="reason">Reason:</label><br>
+					<textarea id="reason" name="reason" rows="5" cols="50"></textarea><br><br>
+					
+					<input type="submit" name="insert" value="Register" id="insert"> <br>
+					<!-- <input type="button" name="insert" value="Register" id="insert"> <br> -->
+				</form>
+				<p id="res"></p>
+			</main>
+				
+			</body>
+			
+			<script>
+					const fid = document.getElementById('fid');
+					const name = document.getElementById('name');
+					const mail = document.getElementById('mail');     
+					const dept = document.getElementById('dept');
+					const mno = document.getElementById('mno');
+			
+					const startDate = document.getElementById('startDate');
+					const endDate = document.getElementById('endDate');
+				   
+					const leaveType = document.getElementById('leave');       
+					const reason = document.getElementById('reason');
+					const insert = document.getElementById('insert');
+					
+			
+					insert.addEventListener('click',()=>{
+						var data = {
+							fid: fid.value,
+							name: name.value,
+							mail: mail.value,
+							
+							dept: dept.value,
+							mno: mno.value,
+							startDate: startDate.value,
+							endDate: endDate.value,
+							leave: leave.value,
+							reason: reason.value
+						}
+						fetch('http://localhost:8080/api/leaverequests',{
+							method: "POST",
+							headers: {
+								'Content-type': 'application/json; chatset=UTF-8'
+							},
+							body: JSON.stringify(data)
+						})
+						.then(res => {return res.json()})
+						.then(res => {result.innerText = JSON.stringify(res)});
+				
+					})
+				</script>
+	
+	
+	<footer>
+		<p>Contact us: kecfaculty.leave.management@example.com</p>
+	</footer>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getone</title>
+</head>
+<body>
+
+    <h1 class="text-center">Faculties Applied for leave</h1>
+    <div class="container">
+        <table class="table ">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">S.no</th>
+                    <th scope="col">Faculty ID</th>
+                    <th scope="col">Faculty name</th>
+                    <th scope="col">Mail</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Mobile Number</th>
+                    <th scope="col">Start date</th>
+                    <th scope="col">End date</th>
+                    <th scope="col">Leave Type</th>
+                    
+                    <th scope="col">Reason</th>
+
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+        <input type="button" value="getone" id="getone">
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    Enter Faculty ID:
+    <input type="text" name="fid" id="fid">
+    <br>
+    <input type="button" value="getone" id="getone">
+    <p id="res"> </p>
+    <script>
+        const getone = document.getElementById('getone');
+        const fid = document.getElementById('fid');
+        const result = document.getElementById('res');
+
+
+
+        console.log("get",getone)
+        getone.addEventListener('click',()=>{
+            if(fid.value == ""){
+                result.innerText = "please enter facultyid!!";
+            }
+            else{
+                fetch(`http://localhost:8080/api/leaverequests/${fid.value}`)  
+                    .then(res => {return res.json() })
+                    .then(res => { result.innerText = JSON.stringify(res) });
+            }
+
+        })
+    </script>
+
+</body>
+</html>

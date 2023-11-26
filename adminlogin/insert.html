@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>        
+   <br><br>
+             
+        <input type="button" name="insert" value="insert" id="insert"> <br>
+    </form>
+    <p id="res"></p>
+    
+</body>
+
+<script>
+        
+        const name = document.getElementById('name');
+        const password = document.getElementById('password');     
+        
+       
+        const insert = document.getElementById('insert');
+       
+
+        insert.addEventListener('click',()=>{
+            var data = {
+              
+                name: name.value,
+                password: password.value
+                
+            }
+            fetch('http://localhost:8082/api/leaverequests',{
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json; chatset=UTF-8'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(res => {return res.json()})
+            .then(res => {result.innerText = JSON.stringify(res)});
+    
+        })
+    </script>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN LOGIN</title>
+</head>
+<style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+
+      align-items: center;
+      padding-top: 15rem;
+      padding-bottom: 40px;
+      background-color: #c0b5eeaf;
+    }
+
+    .form-signin {
+      width: 100%;
+      max-width: 330px;
+      padding: 15px;
+      margin: auto;
+      border: 2px solid black;
+    }
+
+    .form-signin .checkbox {
+      font-weight: 400;
+    }
+
+    .form-signin .form-floating:focus-within {
+      z-index: 2;
+    }
+
+    .form-signin input[type="email"] {
+      margin-bottom: -1px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .form-signin input[type="password"] {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+<body>
+    <h1 style="text-align:center">WELCOME</h1>
+    <h1 style="text-align: center;">ADMIN SIGNIN PAGE</h1>
+    <main class="form-signin">
+    <form action="adminhome.html">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" ><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" ><br><br>        
+   <br><br>            
+        <input type="submit" name="insert" value="LOGIN" id="insert"> <br>
+    </form>
+</main>
+    <p id="res"></p>   
+</body>
+
+<script>        
+        const name = document.getElementById('name');
+        const password = document.getElementById('password');           
+        const insert = document.getElementById('insert');
+        insert.addEventListener('click',()=>{
+            var data = {              
+                name: name.value,
+                password: password.value               
+            }
+            fetch('http://localhost:8082/api/leaverequests',{
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json; chatset=UTF-8'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(res => {return res.json()})
+            .then(res => {result.innerText = JSON.stringify(res)});    
+        })
+    </script>
+</html>
